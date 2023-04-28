@@ -1,0 +1,23 @@
+unit Database.Dao.Pessoa;
+
+interface
+
+
+uses
+
+UDM,
+DataBase.Generics,
+
+
+
+FireDAC.Comp.Client;
+
+
+
+
+
+
+
+implementation
+
+end.

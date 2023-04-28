@@ -1,0 +1,85 @@
+unit Database.Dao.Endereco;
+
+interface
+
+
+uses
+
+UDM,
+DataBase.Generics,
+DataBase.Entity.Endereco,
+
+FireDAC.Comp.Client;
+
+
+
+Function Set_Endereco(Endereco:TEndereco):Boolean;
+
+
+
+
+
+implementation
+
+uses
+  System.SysUtils;
+
+
+Function Set_Pessoa(Endereco:TEndereco):Boolean;
+Var
+Qry:TFDQuery;
+begin
+
+
+  try
+
+   Qry              := TFDQuery.Create(Nil);
+   Qry.Connection   := DM.Connection;
+
+
+   Qry.Close;
+   Qry.SQL.Clear;
+   Qry.SQL.Add('INSERT INTO pessoa(idpessoa,flnatureza,dsdocumento,nmprimeiro,nmsegundo,dtregistro)');
+   Qry.SQL.Add('VALUES');
+   Qry.SQL.Add('(:idpessoa,:flnatureza,:dsdocumento,:nmprimeiro,:nmsegundo,:dtregistro)');
+
+   Qry.ParamByName('idpessoa').AsInteger          := Pessoa.idpessoa;
+   Qry.ParamByName('flnatureza').AsInteger        := Pessoa.flnatureza;
+   Qry.ParamByName('dsdocumento').AsString        := Pessoa.dsdocumento;
+   Qry.ParamByName('nmprimeiro').AsString         := Pessoa.nmprimeiro;
+   Qry.ParamByName('nmsegundo').AsString          := Pessoa.nmsegundo;
+   Qry.ParamByName('dtregistro').AsDate           := Pessoa.dtregistro;
+
+
+    try
+
+     Qry.ExecSQL;
+
+    except on E: Exception do
+
+    DM.GravaLog(E.Message);
+
+    end;
+
+
+
+
+
+  finally
+
+  Qry.Free;
+
+  end;
+
+
+
+
+
+
+
+end;
+
+
+
+end.
+

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/26 08:03:21.000.331,=C:\Users\Clederson Maia\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/04/26 08:04:40.000.342,D:\Projetos\TesteTecnico\Source\Forms\UPrincipal.dfm=C:\Users\Clederson Maia\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2023/04/26 08:04:40.000.342,D:\Projetos\TesteTecnico\Source\Forms\UPrincipal.pas=C:\Users\Clederson Maia\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/04/26 08:04:51.000.105,D:\Projetos\TesteTecnico\ProjetoTecnico.dproj=C:\Users\Clederson Maia\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2023/04/26 08:04:59.000.155,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 08:05:23.000.081,D:\Projetos\TesteTecnico\Source\DataModule\UDM.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 08:05:23.000.081,D:\Projetos\TesteTecnico\Source\DataModule\UDM.dfm=D:\Projetos\TesteTecnico\Unit1.dfm</Transaction>
+    <Transaction>2023/04/26 08:39:48.000.142,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 08:40:41.000.510,D:\Projetos\TesteTecnico\Source\DataBase\DataBase.Creator.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 09:36:18.000.598,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 09:39:11.000.201,D:\Projetos\TesteTecnico\Source\DataBase\Entity\Database.Entity.Pessoa.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:23:39.000.634,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:24:37.000.060,D:\Projetos\TesteTecnico\Source\DataBase\DataBase.Generics.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:40:41.000.396,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:48:04.000.894,D:\Projetos\TesteTecnico\Source\DataBase\Entity\Database.Entity.Endereco.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:49:23.000.321,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:50:16.000.849,D:\Projetos\TesteTecnico\Source\DataBase\Entity\Database.Entity.Endereco_Integracao.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:59:06.000.880,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:59:35.000.853,D:\Projetos\TesteTecnico\Source\Forms\UCadPessoa.pas=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 10:59:35.000.853,D:\Projetos\TesteTecnico\Source\Forms\UCadPessoa.dfm=D:\Projetos\TesteTecnico\Unit1.dfm</Transaction>
+    <Transaction>2023/04/26 19:30:49.000.976,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 19:31:31.000.235,D:\Projetos\TesteTecnico\Unit1.pas=D:\Projetos\TesteTecnico\Source\DataBase\Dao\Database.Dao.Pessoa.pas</Transaction>
+    <Transaction>2023/04/26 20:31:42.000.995,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 20:32:37.000.261,D:\Projetos\TesteTecnico\Unit1.pas=D:\Projetos\TesteTecnico\Source\DataBase\Dao\Database.Dao.Endereco.pas</Transaction>
+    <Transaction>2023/04/26 20:38:21.000.948,=D:\Projetos\TesteTecnico\Unit1.pas</Transaction>
+    <Transaction>2023/04/26 20:38:48.000.258,D:\Projetos\TesteTecnico\Unit1.pas=D:\Projetos\TesteTecnico\Source\DataBase\Dao\Database.Dao.Endereco_Integracao.pas</Transaction>
+  </Transactions>
+</BorlandProject>

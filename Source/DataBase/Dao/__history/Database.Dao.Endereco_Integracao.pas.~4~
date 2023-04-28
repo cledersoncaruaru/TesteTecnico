@@ -1,0 +1,190 @@
+unit Database.Dao.Endereco_Integracao;
+
+interface
+
+
+uses
+
+UDM,
+IdHTTP,
+DataBase.Generics,
+DataBase.Entity.Endereco_Integracao,
+
+FireDAC.Comp.Client, System.JSON;
+
+
+
+Function Set_Endereco_Integracao(Endereco_Integracao:TEndereco_Integracao):Boolean;
+
+Function Get_Endereco(Cep:String; Var dsuf, nmcidade, nmbairro, nmlogradouro, dscomplemento:String):TJSONObject;
+
+Procedure CarregaDadosEndereco(jsonArray: TJSONArray);
+
+
+
+implementation
+
+uses
+  System.SysUtils, System.Classes;
+
+
+procedure CarregaDadosEndereco(jsonArray: TJSONArray);
+var
+  i : Integer;
+  resultados, jsonObjeto : TJSONObject;
+begin
+//  cds_dados.DisableControls;
+
+//  try
+//    for i := 0 to jsonArray.Size - 1 do
+//    begin
+//      cds_dados.Append;
+//      cds_dadosLogradouro.AsString  := TJSONObject(jsonArray.Get(i)).Get('logradouro').JsonValue.Value;
+//      cds_dadosCEP.AsString         := TJSONObject(jsonArray.Get(i)).Get('cep').JsonValue.Value;
+//      cds_dadosLocalidade.AsString  := UpperCase(TJSONObject(jsonArray.Get(0)).Get('localidade').JsonValue.Value);
+//      cds_dadosBairro.AsString      := TJSONObject(jsonArray.Get(i)).Get('bairro').JsonValue.Value;
+//      cds_dadosUF.AsString          := TJSONObject(jsonArray.Get(i)).Get('uf').JsonValue.Value;
+//      cds_dadosComplemento.AsString := TJSONObject(jsonArray.Get(i)).Get('complemento').JsonValue.Value;
+//      cds_dadosIBGE.AsString        := TJSONObject(jsonArray.Get(i)).Get('ibge').JsonValue.Value;
+//      cds_dadosUnidade.AsString     := TJSONObject(jsonArray.Get(i)).Get('unidade').JsonValue.Value;
+//      cds_dados.Post;
+//    end;
+//  finally
+//    cds_dados.First;
+//    cds_dados.EnableControls;
+//  end;
+
+end;
+
+
+Function Get_Endereco(Cep:String; Var dsuf, nmcidade, nmbairro, nmlogradouro, dscomplemento:String):TJSONObject;
+Var
+HTTP  : TIdHTTP;
+Query : String;
+Buffer: String;
+
+Response: TStringStream;
+JsonArray: TJSONArray;
+logradouro:String;
+
+I:Integer;
+begin
+
+
+  try
+
+  HTTP := TIdHTTP.Create;
+
+
+   HTTP.Get('https://viacep.com.br/ws/' + CEP + '/json', Response);
+
+     if (HTTP.ResponseCode = 200) and not (UTF8ToString(Response.DataString) = '{'#$A'  "erro": true'#$A'}') then
+      begin
+//        Memo_json.Text := UTF8ToString(Response.DataString);
+        Result := TJSONObject.ParseJSONValue(TEncoding.ASCII.GetBytes(UTF8ToString(Response.DataString)), 0) as TJSONObject;
+      end
+      else
+        raise Exception.Create('CEP inexistente!') ;
+
+
+       for I := 0 to jsonArray.Size - 1 do
+    begin
+       logradouro := TJSONObject(jsonArray.Get(i)).Get('logradouro').JsonValue.Value;
+
+    end;
+
+
+
+//  Query := 'https://viacep.com.br/ws/'+ Cep + '/json/';
+
+//  Buffer := HTTP.Get(Query);
+
+
+
+
+  finally
+
+
+  HTTP.Free;
+
+  end;
+
+
+end;
+
+
+
+Function Set_Endereco_Integracao(Endereco_Integracao:TEndereco_Integracao):Boolean;
+Var
+Qry:TFDQuery;
+ID_Endereco_Integracao:LongInt;
+begin
+
+  ID_Endereco_Integracao  :=0;
+
+  try
+
+   Qry              := TFDQuery.Create(Nil);
+   Qry.Connection   := DM.Connection;
+
+
+   Qry.Close;
+   Qry.SQL.Clear;
+   Qry.SQL.Add('INSERT INTO endereco(idendereco, dsuf, nmcidade, nmbairro, nmlogradouro, dscomplemento)');
+   Qry.SQL.Add('VALUES');
+   Qry.SQL.Add('(:idendereco, :dsuf, :nmcidade, :nmbairro, :nmlogradouro, :dscomplemento)');
+
+
+   if Endereco_Integracao.idendereco <=0 then
+   begin
+      ID_Endereco_Integracao   := Get_Sequence('endereco_integracao_idendereco_seq');
+
+   end
+   else
+   begin
+
+   ID_Endereco_Integracao   := Endereco_Integracao.idendereco;
+
+   end;
+
+
+   Qry.ParamByName('idendereco').AsInteger      := ID_Endereco_Integracao;
+   Qry.ParamByName('dsuf').AsString             := Endereco_Integracao.dsuf;
+   Qry.ParamByName('nmcidade').AsString         := Endereco_Integracao.nmcidade;
+   Qry.ParamByName('nmbairro').AsString         := Endereco_Integracao.nmbairro;
+   Qry.ParamByName('nmlogradouro').AsString     := Endereco_Integracao.nmlogradouro;
+   Qry.ParamByName('dscomplemento').AsString    := Endereco_Integracao.dscomplemento;
+
+
+    try
+
+     Qry.ExecSQL;
+
+    except on E: Exception do
+
+    DM.GravaLog(E.Message);
+
+    end;
+
+
+
+
+
+  finally
+
+  Qry.Free;
+
+  end;
+
+
+
+
+
+
+
+end;
+
+
+
+end.
+

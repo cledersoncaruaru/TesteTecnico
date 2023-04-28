@@ -1,0 +1,19 @@
+object DM: TDM
+  Height = 480
+  Width = 640
+  object Connection: TFDConnection
+    Params.Strings = (
+      'Database=postgres'
+      'User_Name=postgres'
+      'Password=postgres'
+      'DriverID=PG')
+    LoginPrompt = False
+    Left = 72
+    Top = 56
+  end
+  object Driver: TFDPhysPgDriverLink
+    VendorLib = 'D:\Projetos\TesteTecnico\bin\libpq.dll'
+    Left = 72
+    Top = 112
+  end
+end

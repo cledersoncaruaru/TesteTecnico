@@ -1,0 +1,14 @@
+'26/04/2023 - 19:52:29' Log...    [FireDAC][Comp][Clnt]-512. Connection is not defined for []. Possible reason: Connection and ConnectionName property values are both empty
+'26/04/2023 - 19:53:14' Log...    [FireDAC][Phys][PG][libpq] ERROR: syntax error at or near "$1"
+'26/04/2023 - 22:08:57' Log...    [FireDAC][Phys][PG][libpq] ERROR: column "dsuf" of relation "endereco" does not exist
+'26/04/2023 - 23:37:43' Log...    [FireDAC][Phys][PG][libpq] ERROR: syntax error at end of input
+'26/04/2023 - 23:37:48' Log...    [FireDAC][Phys][PG][libpq] ERROR: insert or update on table "endereco_integracao" violates foreign key constraint "enderecointegracao_fk_endereco".
+Key (idendereco)=(9) is not present in table "endereco".
+'26/04/2023 - 23:41:54' Log...    [FireDAC][Phys][PG][libpq] ERROR: there is no unique or exclusion constraint matching the ON CONFLICT specification
+'26/04/2023 - 23:42:02' Log...    [FireDAC][Phys][PG][libpq] ERROR: insert or update on table "endereco_integracao" violates foreign key constraint "enderecointegracao_fk_endereco".
+Key (idendereco)=(11) is not present in table "endereco".
+'26/04/2023 - 23:43:00' Log...    [FireDAC][Phys][PG][libpq] ERROR: there is no unique or exclusion constraint matching the ON CONFLICT specification
+'26/04/2023 - 23:43:06' Log...    [FireDAC][Phys][PG][libpq] ERROR: insert or update on table "endereco_integracao" violates foreign key constraint "enderecointegracao_fk_endereco".
+Key (idendereco)=(12) is not present in table "endereco".
+'26/04/2023 - 23:54:53' Log...    [FireDAC][Phys][PG][libpq] ERROR: there is no unique or exclusion constraint matching the ON CONFLICT specification
+'27/04/2023 - 00:21:20' Log...    Parameter 'idpessoa' not found

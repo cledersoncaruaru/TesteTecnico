@@ -1,0 +1,19 @@
+program ProjetoTecnico;
+
+uses
+  Vcl.Forms,
+  UPrincipal in 'Source\Forms\UPrincipal.pas' {FrmPrincipal},
+  UDM in 'Source\DataModule\UDM.pas' {DM: TDataModule},
+  DataBase.Creator in 'Source\DataBase\DataBase.Creator.pas',
+  Database.Entity.Pessoa in 'Source\DataBase\Entity\Database.Entity.Pessoa.pas',
+  DataBase.Generics in 'Source\DataBase\DataBase.Generics.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.
